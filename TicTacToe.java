@@ -2,9 +2,9 @@ package com.bridgelabz.day7.UC_TicTacToe;
 
 import java.util.*;
 public class TicTacToe {
-    int i;
-    static char[] board = new char[10];
-    static char player, computer;
+	int i;
+    char[] board = new char[10];
+    char player, computer;
     Scanner scan = new Scanner(System.in);
 
     public void initialize() {
@@ -12,10 +12,18 @@ public class TicTacToe {
             board[i] = ' ';
         }
     }
+
+    public void showboard() {
+        System.out.println(board[1] + " | " + board[2] + " | " + board[3]);
+        System.out.println("---------");
+        System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
+        System.out.println("---------");
+        System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
+    }
     public void check()
     {
         System.out.println("Please Select Your Choice Letter : 'X' or 'O' ");
-        char choice = scan.next().charAt(0);
+        char choice = scan.next().toUpperCase().charAt(0);
         if (choice == 'X') {
             player = 'X';
             computer = 'O';
@@ -24,16 +32,11 @@ public class TicTacToe {
             computer = 'X';
         }
     }
-
 	public static void main(String[] args) {
 		System.out.println("Welcome to TIC_TAC_TOE game");
-		 System.out.println(board[1] + " | " + board[2] + " | " + board[3]);
-	        System.out.println("---------");
-	        System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
-	        System.out.println("---------");
-	        System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
-	        TicTacToe ticTacToe = new TicTacToe();
-	        ticTacToe.check();
+		TicTacToe obj = new TicTacToe();
+        obj.initialize();
+        obj.showboard();
 	}
 
 }
