@@ -12,6 +12,18 @@ public class TicTacToe {
             board[i] = ' ';
         }
     }
+    public void check()
+    {
+        System.out.println("Please Select Your Choice Letter : 'X' or 'O' ");
+        char choice = scan.next().charAt(0);
+        if (choice == 'X') {
+            player = 'X';
+            computer = 'O';
+        } else if (choice == 'Y') {
+            player = 'O';
+            computer = 'X';
+        }
+    }
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to TIC_TAC_TOE game");
@@ -20,7 +32,8 @@ public class TicTacToe {
 	        System.out.println(board[4] + " | " + board[5] + " | " + board[6]);
 	        System.out.println("---------");
 	        System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
-
+	        TicTacToe ticTacToe = new TicTacToe();
+	        ticTacToe.check();
 	}
 
 }
